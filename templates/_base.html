@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <title>LIRSM Scraper</title>
+        <link rel="stylesheet" href="{{ url_for('static',
+            filename='style.css') }}">
+        <link rel='shortcut icon'
+            href="{{ url_for('static', filename='img/favicon-96x96.png') }}">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans'
+         rel='stylesheet' type='text/css'>
+        <script src="{{ url_for('static', filename='js/clipboard.min.js') }}"></script>
+
+    </head>
+    <body>
+        <div id="header">
+            <h1 id="header_text">LIRSM Scraper</h1>
+        </div>
+        <div class="page">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </body>
+</html>

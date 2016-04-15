@@ -1,0 +1,21 @@
+{% extends "_base.html"%}
+{% block content %}
+    <div class="results">
+        <p><b>Source:</b> {{ text_dict.source }}</p>
+        <p><b>Date Published:</b> {{ text_dict.published }}</p>
+        <p><b>Author(s):</b> {{ text_dict.authors }}</p>
+        <p><b>Title:</b> {{ text_dict.title }}</p>
+        <button class="btn" data-clipboard-target="#all_text">
+            Click here to copy article text
+        </button>
+        <div id="all_text">
+            {% for paragraph in text_dict.text %}
+                <p id="article_text">{{ paragraph }}</p>
+            {% endfor %}
+        </div
+    </div>
+    <script>
+        var Clipboard = new Clipboard(".btn")
+    </script>
+
+{% endblock %}

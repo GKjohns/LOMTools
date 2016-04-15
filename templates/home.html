@@ -1,0 +1,29 @@
+{% extends "_base.html"%}
+{% block content %}
+    <h3 class="mid_header">Full Text Scraper</h3>
+    <h4 id="helper_text"><em>Select a source and enter a url</em></h4>
+    <div class="form_div">
+        <form class="url_form" action="/scrape/" method="post">
+            {{ form.url(placeholder="enter url here (http://www......)",
+                style="width: 500px;")}}
+            <br>
+            <br>
+            {{ form.source }}
+            <button type="submit" name="button">Go!</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <h3 class="mid_header">Tweet Scraper</h3>
+    <h4 id="helper_text"><em>Enter a url, works for any source!</em></h4>
+    <div class="form_div">
+        <form class="" action="/pull_tweets/" method="post">
+            {{ form.url(placeholder="enter url here (http://www......)",
+                style="width: 500px;")}}
+            <br>
+            <br>
+            <button type="submit" name="button">Get tweets!</button>
+        </form>
+    </div>
+{% endblock %}
