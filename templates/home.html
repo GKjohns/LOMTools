@@ -1,29 +1,67 @@
 {% extends "_base.html"%}
 {% block content %}
-    <h3 class="mid_header">Full Text Scraper</h3>
-    <h4 id="helper_text"><em>Select a source and enter a url</em></h4>
-    <div class="form_div">
-        <form class="url_form" action="/scrape/" method="post">
-            {{ form.url(placeholder="enter url here (http://www......)",
-                style="width: 500px;")}}
-            <br>
-            <br>
-            {{ form.source }}
-            <button type="submit" name="button">Go!</button>
-        </form>
+    <br>
+    <br>
+    <div id="buttons">
+        <a class="initial_select_button" id="scrape" href="/"><span class="button_text">Extract everything</span></a>
+        <a class="initial_select_button" id="get_tweets" href="/"><span class="button_text">Just tweets</span></a>
     </div>
-    <br>
-    <br>
-    <br>
-    <h3 class="mid_header">Tweet Scraper</h3>
-    <h4 id="helper_text"><em>Enter a url, works for any source!</em></h4>
-    <div class="form_div">
-        <form class="" action="/pull_tweets/" method="post">
-            {{ form.url(placeholder="enter url here (http://www......)",
-                style="width: 500px;")}}
-            <br>
-            <br>
-            <button type="submit" name="button">Get tweets!</button>
-        </form>
+    <div id="fade_content">
+        <div id="full_scraper">
+            <!-- <h3 class="mid_header">Full Text Scraper</h3> -->
+            <h4 id="helper_text"><em>Select a source and enter a url</em></h4>
+            <div class="form_div">
+                <form class="url_form" action="/scrape/" method="post">
+                    {{ form.url(placeholder="enter url here (http://www......)",
+                        style="width: 500px;")}}
+                        <br>
+                    {{ form.source }}
+                    <button type="submit" name="button">Go!</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="tweets">
+            <!-- <h3 class="mid_header">Tweet Scraper</h3> -->
+            <h4 id="helper_text"><em>Enter a url, works for any source!</em></h4>
+            <div class="form_div">
+                <form class="" action="/pull_tweets/" method="post">
+                    {{ form.url(placeholder="enter url here (http://www......)",
+                        style="width: 500px;")}}
+                    <button type="submit" name="button">Get tweets!</button>
+                </form>
+            </div>
+        </div>
     </div>
+
+
+
+
+    <!--
+    TODO:
+        -make a back button
+    -->
+
+
+    <script type="text/javascript">
+
+        var fade_speed = 300;
+
+        $("#full_scraper").hide();
+        $("#tweets").hide();
+        alert("ready!");
+
+        $('#scrape').click(function(event){
+             event.preventDefault();
+             $("#tweets").fadeOut(fade_speed);
+             $("#full_scraper").delay(fade_speed).fadeIn(fade_speed);
+        });
+
+        $('#get_tweets').click(function(event){
+             event.preventDefault();
+             $("#full_scraper").fadeOut(fade_speed);
+             $("#tweets").delay(fade_speed).fadeIn(fade_speed);
+        });
+
+    </script>
 {% endblock %}

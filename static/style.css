@@ -1,23 +1,4 @@
-/*html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}*/
+
 
 div.results {
     margin: 20px 100px 0 100px;
@@ -48,8 +29,14 @@ p#article_text {
 }
 
 h1#header_text {
-    size: 500px;
+    size: 300px;
     text-align: center;
+}
+
+#subheader {
+    color: #777;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 
@@ -65,4 +52,25 @@ div.form_div {
 
 .mid_header {
     text-align: center;
+}
+
+a.initial_select_button {
+    text-decoration: none;
+}
+
+span.button_text {
+    color: white;
+    background-color: #83accd;
+    padding: 20px;
+    margin: 0 20px 0 20px;
+
+}
+
+span.button_text:hover {
+    background-color: #003366;
+}
+div#buttons {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }

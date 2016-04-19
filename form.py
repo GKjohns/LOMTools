@@ -12,4 +12,4 @@ class URLForm(Form):
         choices=sources)
 
 class TweetPullerForm(Form):
-    url = URLField('url', validators=[DataRequired, url()])
+    url = URLField('url', validators=[DataRequired(), url()])

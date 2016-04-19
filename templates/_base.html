@@ -10,12 +10,14 @@
             href="{{ url_for('static', filename='img/favicon-96x96.png') }}">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans'
          rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         <script src="{{ url_for('static', filename='js/clipboard.min.js') }}"></script>
 
     </head>
     <body>
         <div id="header">
-            <h1 id="header_text">LIRSM Scraper</h1>
+            <h1 id="header_text">LIRSM Tools</h1>
+            <h3 id="subheader">Tools to quickly pull data from news sources</h2>
         </div>
         <div class="page">
             {% block content %}
