@@ -30,10 +30,10 @@ def pull_tweets():
     data = TweetPullerForm(request.form).url.data
     formatted_tweets = get_format_tweets(data)
     if formatted_tweets == []:
-        return render_template('formatted_tweets',
+        return render_template('formatted_tweets.html',
                                tweets=['No tweets on this page!'])
     else:
-        return render_template('formatted_tweets',
+        return render_template('formatted_tweets.html',
                                tweets=formatted_tweets)
 
 # @app.route('/results/')
